@@ -2,10 +2,10 @@
 This is a RESTFUL API that allows user's to perform CRUD operation on a Todo resource.
 
 # Getting Started
-To get the service up and running, follow the steps below:
+  To get the service up and running, follow the steps below:
 
  1. clone the project by using the command
-    below in your terminal
+   -** below in your terminal
     
     git clone github.com/2005Emmanuel/Todo-API.git
     
