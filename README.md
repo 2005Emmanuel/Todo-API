@@ -13,8 +13,8 @@ This is a RESTFUL API that allows user's to perform CRUD operation on a Todo res
    
        ```cd Todo-API```
     
-   3. Build the project using ### mvn clean install.
+   3. Build the project using  ```mvn clean install```.
 
-   4. Run using ### mvn spring-boot:run.
+   4. Run using ```mvn spring-boot:run```.
 
-   5. The web application is accessible via localhost:8080 by default.
+   5. The web application is accessible via localhost:8080 .
