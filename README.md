@@ -7,7 +7,7 @@ This is a RESTFUL API that allows user's to perform CRUD operation on a Todo res
    1. clone the project by using the command
       below in your terminal
     
-       ```git clone github.com/2005Emmanuel/Todo-API.git```
+       ```git clone github.com/2005Emmanuel/Todo-API.git          ```
     
    2. Change directory into the cloned Repository
    
