@@ -18,3 +18,10 @@ This is a RESTFUL API that allows user's to perform CRUD operation on a Todo res
    4. Run using ```  mvn spring-boot:run  ```
 
    5. The web application is accessible via ```  localhost:8080  ``` 
+
+
+# Technology used
+-  java
+-  springboot
+-  h2 database
+   
