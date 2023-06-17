@@ -5,6 +5,8 @@
 package com.TodoAPI.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.util.Date;
 import lombok.Data;
@@ -17,6 +19,7 @@ import lombok.Data;
 @Data
 public class Todo {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     Long id;
     String title;
     String description;
