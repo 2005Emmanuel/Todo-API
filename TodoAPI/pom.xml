@@ -14,7 +14,11 @@
 	<name>TodoAPI</name>
 	<description>This is an API that allow User's to perform CRUD operation on a Todo resource.</description>
 	<properties>
-		<java.version>20</java.version>
+<!--            Development-->
+<!--		<java.version>20</java.version>-->
+                
+<!--                Production-->
+	<java.version>17</java.version>
 	</properties>
 	<dependencies>
 <!--            Swagger dependency-->
