@@ -24,4 +24,10 @@ This is a RESTFUL API that allows user's to perform CRUD operation on a Todo res
 -  java
 -  springboot
 -  h2 database
+-  Spring security
+
+
+#  Basic Auth details
+   ``` Password = password ``` 
+   ``` Username = user``` 
    
