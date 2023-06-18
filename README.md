@@ -29,3 +29,8 @@ This is a RESTFUL API that allows user's to perform CRUD operation on a Todo res
 
 #  API url
 -  https://todo-api-production-014b.up.railway.app/v1/swagger-ui.html
+
+
+#  Basic Authentication Details
+-  Username = user
+-  Password = password
