@@ -24,18 +24,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 /**
  *
  * @author user
  */
 @RestController
+@RequestMapping("todos")
 public class TodoController {  
       @Autowired
       TodoRepository service;
     
+  
       //Add a Todo
       //swagger config
       @Operation(summary="Add a todo")
@@ -58,13 +62,14 @@ public class TodoController {
         @ApiResponse(responseCode="200", description="Succesfully retrieved all todos",
                 content = { @Content(mediaType =
                         "application/json", schema = @Schema(implementation = Todo.class )) }),
-                  @ApiResponse(responseCode="204", description="No Content Found",
+                  @ApiResponse(responseCode="204", description="No Todo Found",
                         content = @Content),
                 })
     @GetMapping("/v1/todos")
     public ResponseEntity<Todo> retrieveAllTodo(){
         List<Todo> todo = new ArrayList<>();
-        service.findAll().forEach(e->todo.add(e));
+        service
+                .findAll().forEach(e->todo.add(e));
        if(todo.isEmpty()){
            return new ResponseEntity(todo, HttpStatus.NO_CONTENT);
        }
@@ -89,7 +94,8 @@ public class TodoController {
     @GetMapping(value="/v1/todos/{id}")
     public ResponseEntity<Todo> retrieveaTodo(@PathVariable("id") Long id) {
         Optional<Todo> todo =  service.findById(id);
-        todo.orElseThrow(()-> new TodoNotFoundException("No Todo Found with id = " +id));
+        todo
+                .orElseThrow(()-> new TodoNotFoundException("No Todo Found with id = " +id));
         return new ResponseEntity(todo,HttpStatus.OK);    
     }
   
@@ -107,7 +113,8 @@ public class TodoController {
     @PutMapping("/v1/update-todos/{id}")
     public ResponseEntity<Todo> updateaTodo(@PathVariable("id") long id, @RequestBody Todo todo){
      Optional<Todo> todo_ =  service.findById(id);
-     todo_.orElseThrow(()-> new TodoNotFoundException("No Todo Found with id = " +id));
+     todo_
+             .orElseThrow(()-> new TodoNotFoundException("No Todo Found with id = " +id));
      todo_.get().setId(todo_.get().getId());
      todo_.get().setTitle(todo_.get().getTitle());
      todo_.get().setDescription(todo_.get().getDescription());
@@ -131,7 +138,8 @@ public class TodoController {
     public ResponseEntity<Todo> deleteaTodo(@PathVariable("id") Long id){
            Optional <Todo> todo = service.findById(id);
            service.deleteById(id);
-           todo.orElseThrow(()->new TodoNotFoundException("No found Todo with id "+id+" to delete"));
+           todo
+                   .orElseThrow(()->new TodoNotFoundException("No found Todo with id "+id+" to delete"));
            return new ResponseEntity<>(HttpStatus.OK);
            
    

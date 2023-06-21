@@ -15,10 +15,10 @@
 	<description>This is an API that allow User's to perform CRUD operation on a Todo resource.</description>
 	<properties>
 <!--            Development-->
-<!--		<java.version>20</java.version>-->
+		<java.version>20</java.version>
                 
 <!--                Production-->
-	<java.version>17</java.version>
+<!--	<java.version>17</java.version>-->
 	</properties>
 	<dependencies>
 <!--            Swagger dependency-->
